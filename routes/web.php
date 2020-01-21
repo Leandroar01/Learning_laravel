@@ -30,16 +30,7 @@ Route::group([
     
     Route::resource('product', 'ProductController');
         
-    Route::get('/financeiro', function () {
-        return 'Tela financeiro';        
-        });
-
-    Route::get('/painel', function () {
-        return 'Tela painel';        
-      });
-            
-});
-
-Route::get('/', function () {
-    return view('welcome');
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });

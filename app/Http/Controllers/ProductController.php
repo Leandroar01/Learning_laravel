@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function index(){
-        $product = ['Produto 1','Produto 2','Produto 3'];
-
-        return $product;
+        $teste = 123;
+        $teste1 = 321;
+        $teste2 = [];
+        return view ('Admin.Pages.Product.app', compact('teste','teste1','teste2'));     
 
     }
 
@@ -32,8 +33,11 @@ class ProductController extends Controller
     public function create(){
         return 'Produto criado com sucesso';
     }
+      
     
     public function store(){
         return 'Produto store com sucesso';
     }
+
+
 }
