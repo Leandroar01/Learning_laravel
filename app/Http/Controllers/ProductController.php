@@ -10,7 +10,8 @@ class ProductController extends Controller
         $teste = 123;
         $teste1 = 321;
         $teste2 = [];
-        return view ('Admin.Pages.Product.app', compact('teste','teste1','teste2'));     
+        $teste3 = ['televisao', 'geladeira', 'sofa','microondas'];
+        return view ('Admin.Pages.Product.app', compact('teste','teste1','teste2','teste3'));     
 
     }
 
@@ -31,12 +32,11 @@ class ProductController extends Controller
     }
 
     public function create(){
-        return 'Produto criado com sucesso';
-    }
+        return view ('Admin.Pages.Product.create');
       
-    
+    }
     public function store(){
-        return 'Produto store com sucesso';
+        return dd ('Carregando...');
     }
 
 

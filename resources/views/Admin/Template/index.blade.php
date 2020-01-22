@@ -7,8 +7,10 @@
     <title>@yield('title') Especializacao</title>
 </head>
 <body>
+    @stack('style')
     <div class= "container">
         @yield('content')
     </div>
+    @stack('script')
 </body>
 </html>
