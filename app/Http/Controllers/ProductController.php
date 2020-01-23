@@ -24,19 +24,27 @@ class ProductController extends Controller
     }
 
     public function update($id){
-        return "$id esta pronto para ser editado";
+        return dd("Editanto produto - {$id}");
     }
 
     public function edit($id){
-        return "$id esta pronto para ser EDITATO";
+        return view('Admin.Pages.Product.edit',compact('id'));
     }
-
-    public function create(){
+        public function create(){
         return view ('Admin.Pages.Product.create');
       
     }
-    public function store(){
-        return dd ('Carregando...');
+    public function store(Request $request){
+        if ($request->file('photo')->isValid()) {//valida se o arquivo nao esta com algum problema.
+            //modelo de envio sem personalizacao do nome do arquivo
+           // dd( $request->photo->store('Products')); 
+           //mode onde é possivel personalizar o nome do arquivo salvo
+           $namefile = $request ->name . "." . $request->photo->extension();
+           dd($request -> file ('photo') -> storeAs ('Products',$namefile));
+    
+            
+        }
+
     }
 
 
