@@ -34,8 +34,9 @@ class ProductController extends Controller
         return view ('Admin.Pages.Product.create');
       
     }
-    public function store(Request $request){
-        if ($request->file('photo')->isValid()) {//valida se o arquivo nao esta com algum problema.
+    public function store(StoreUpdateProductRequest $request){
+    
+           if ($request->file('photo')->isValid()) {//valida se o arquivo nao esta com algum problema.
             //modelo de envio sem personalizacao do nome do arquivo
            // dd( $request->photo->store('Products')); 
            //mode onde é possivel personalizar o nome do arquivo salvo
